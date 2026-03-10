@@ -1,8 +1,23 @@
 {
   "todos": [
     {
-      "id": "c91f",
-      "title": "코테풀기",
+      "id": "38b0",
+      "title": "백준 풀기",
+      "completed": false
+    },
+    {
+      "id": "0cc4",
+      "title": "위클리 페이퍼 작성",
+      "completed": false
+    },
+    {
+      "id": "826e",
+      "title": "미션 제출",
+      "completed": false
+    },
+    {
+      "id": "6d97",
+      "title": "스터디 자료 준비",
       "completed": true
     }
   ],

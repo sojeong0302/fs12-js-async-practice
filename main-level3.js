@@ -1,5 +1,4 @@
 const BASE_URL = "http://localhost:4000/todos";
-
 // ============================================
 // index.html과 style.css를 참고해서
 // 할 일 목록 앱을 완성하세요.
