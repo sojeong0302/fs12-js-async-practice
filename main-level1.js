@@ -65,6 +65,7 @@ async function addTodo(title) {
     },
     body: {
       title: title,
+      completed: false,
     },
   });
   getTodos();
@@ -79,7 +80,7 @@ async function toggleTodo(id, completed) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      completed: `${completed}`,
+      completed: true,
     }),
   });
   getTodos();
