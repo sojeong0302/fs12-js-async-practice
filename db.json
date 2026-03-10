@@ -1,34 +1,9 @@
 {
   "todos": [
     {
-      "id": "2",
-      "title": "fetch 과제 풀기",
-      "completed": "false"
-    },
-    {
-      "id": "3",
-      "title": "CSS 플렉스박스 연습",
-      "completed": "true"
-    },
-    {
-      "id": "465b",
-      "title": "ㅎㄷㄱㅎㄷㄱㅎㄷㄱ"
-    },
-    {
-      "id": "25a7",
-      "title": "ㄱㅎㄷㄱㅎㄱㄷ"
-    },
-    {
-      "id": "0e2a",
-      "title": "ㄱㅎㄱㅎㄷ"
-    },
-    {
-      "id": "d157",
-      "title": "ㅕㅏㅛㅕㅏㅕㅛ"
-    },
-    {
-      "id": "28ad",
-      "title": "ㅕㅏㅕㅏㅕㅏ"
+      "id": "c91f",
+      "title": "코테풀기",
+      "completed": true
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
