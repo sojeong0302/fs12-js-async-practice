@@ -1,7 +1,31 @@
 {
   "todos": [
-    { "id": 1, "title": "자바스크립트 복습하기", "completed": false },
-    { "id": 2, "title": "fetch 과제 풀기", "completed": false },
-    { "id": 3, "title": "CSS 플렉스박스 연습", "completed": true }
-  ]
+    {
+      "id": "2",
+      "title": "fetch 과제 풀기",
+      "completed": "false"
+    },
+    {
+      "id": "3",
+      "title": "CSS 플렉스박스 연습",
+      "completed": "true"
+    },
+    {
+      "id": "a58f",
+      "title": "ㅎㄷㄱㅎㄷㄱㅎㄷㄱㅎㄷㅎ"
+    },
+    {
+      "id": "465b",
+      "title": "ㅎㄷㄱㅎㄷㄱㅎㄷㄱ"
+    },
+    {
+      "id": "25a7",
+      "title": "ㄱㅎㄷㄱㅎㄱㄷ"
+    },
+    {
+      "id": "0e2a",
+      "title": "ㄱㅎㄱㅎㄷ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

@@ -50,25 +50,51 @@ function renderTodos(todos) {
 
 // 할 일 목록 불러오기
 async function getTodos() {
-
+  const response = await fetch("http://localhost:4000/todos");
+  const todos = await response.json();
+  renderTodos(todos);
 }
 
 // 새 할 일 추가하기
 // 완료 후 getTodos()를 호출해서 화면을 갱신하세요.
 async function addTodo(title) {
-
+  await fetch("http://localhost:4000/todos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: {
+      title: title,
+    },
+  });
+  getTodos();
 }
 
 // 할 일 완료 토글하기
 // 완료 후 getTodos()를 호출해서 화면을 갱신하세요.
 async function toggleTodo(id, completed) {
-
+  await fetch(`http://localhost:4000/todos/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      completed: `${completed}`,
+    }),
+  });
+  getTodos();
 }
 
 // 할 일 삭제하기
 // 완료 후 getTodos()를 호출해서 화면을 갱신하세요.
 async function deleteTodo(id) {
-
+  await fetch(`http://localhost:4000/todos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  getTodos();
 }
 
 // ============================================
