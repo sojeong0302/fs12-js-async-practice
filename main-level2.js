@@ -29,20 +29,76 @@ const todoInputEl = document.getElementById("todo-input");
 // - 토글 버튼 텍스트: completed면 "완료됨", 아니면 "미완료"
 // ============================================
 
-async function getTodos() {
+//화면 그리기
+function renderTodos(todos) {
+  todoListEl.innerHTML = "";
+  todos.forEach(function (todo) {
+    const li = document.createElement("li");
+    li.className = "todo-item" + (todo.completed ? " completed" : "");
 
+    const title = document.createElement("span");
+    title.className = "title";
+    title.textContent = todo.title;
+
+    const btnToggle = document.createElement("button");
+    btnToggle.className = "btn-toggle";
+    btnToggle.textContent = todo.completed ? "완료됨" : "미완료";
+    btnToggle.addEventListener("click", function () {
+      toggleTodo(todo.id, todo.completed);
+    });
+
+    const btnDelete = document.createElement("button");
+    btnDelete.className = "btn-delete";
+    btnDelete.textContent = "삭제";
+    btnDelete.addEventListener("click", function () {
+      deleteTodo(todo.id);
+    });
+
+    li.appendChild(title);
+    li.appendChild(btnToggle);
+    li.appendChild(btnDelete);
+
+    todoListEl.appendChild(li);
+  });
+}
+
+async function getTodos() {
+  const response = await fetch("http://localhost:4000/todos");
+  const todos = await response.json();
+  renderTodos(todos);
 }
 
 async function addTodo(title) {
-
+  await fetch("http://localhost:4000/todos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title,
+    }),
+  });
 }
 
 async function toggleTodo(id, completed) {
-
+  await fetch(`http://localhost:4000/todos/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      completed: `${completed}`,
+    }),
+  });
 }
 
 async function deleteTodo(id) {
-
+  await fetch(`http://localhost:4000/todos/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }
 
 // ============================================
